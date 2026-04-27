@@ -1,0 +1,22 @@
+{
+  "name": "careerflow-client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev:client": "npm run dev",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "sass": "^1.99.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.10"
+  }
+}

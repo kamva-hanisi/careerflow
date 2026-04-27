@@ -1,0 +1,272 @@
+:root {
+  color-scheme: dark;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(100, 181, 246, 0.22), transparent 35%),
+    radial-gradient(circle at top right, rgba(255, 183, 77, 0.18), transparent 28%),
+    #111827;
+  color: #f9fafb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  padding: 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(3, 7, 18, 0.55);
+  backdrop-filter: blur(18px);
+}
+
+.sidebar nav {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.sidebar a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.content {
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.hero,
+.panel,
+.stat-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(14px);
+  border-radius: 8px;
+}
+
+.hero {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+.hero h2,
+.panel h3,
+.sidebar h1 {
+  margin: 0;
+}
+
+.hero-copy {
+  max-width: 60ch;
+  color: #cbd5e1;
+}
+
+.api-status {
+  margin-top: 1rem;
+  color: #93c5fd;
+}
+
+.hero-card {
+  padding: 1.25rem;
+  background: rgba(30, 41, 59, 0.85);
+  border-radius: 8px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  padding: 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.stat-card span {
+  color: #94a3b8;
+}
+
+.stat-card strong {
+  font-size: 2rem;
+}
+
+.panel {
+  padding: 1.5rem;
+}
+
+.panel-header,
+.filters,
+.auth-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.panel-header {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filters input,
+.filters select,
+.auth-form input {
+  padding: 0.8rem 0.95rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(15, 23, 42, 0.95);
+  color: #f8fafc;
+}
+
+.table {
+  display: grid;
+}
+
+.table-head,
+.table-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1.4fr 0.8fr 0.8fr;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.table-head {
+  color: #94a3b8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.table-row + .table-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.eyebrow {
+  margin: 0 0 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  color: #f59e0b;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+.badge-applied {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+.badge-interview {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fcd34d;
+}
+
+.badge-offer {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+.badge-rejected {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.auth-panel {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.auth-form {
+  flex-direction: column;
+}
+
+.auth-form button {
+  padding: 0.95rem 1rem;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f59e0b, #fb7185);
+  color: #111827;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 960px) {
+  .app-shell,
+  .hero,
+  .auth-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .panel-header,
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 640px) {
+  .content,
+  .sidebar {
+    padding: 1.25rem;
+  }
+
+  .stats-grid,
+  .table-head,
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+
+  .table-head {
+    display: none;
+  }
+
+  .table-row {
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(30, 41, 59, 0.72);
+    margin-bottom: 0.75rem;
+  }
+}
